@@ -1,8 +1,8 @@
 {
   "port":80,
-  "godword":"316b291438a5a2808f669c8d707c9c4d3590506581cd2d01c07954ec4edf5fa6",
-  "kingword":"a7d93e1d5c58998f2412968bea8994515341e7384cb3d4c9d0a947903195d6eb",
-  "higher_kingword":"d522c893657bbfa46cb81ececc79aed1313e39ac0125fae67194a69e4ba2723d",
+  "godword":"NazarTheCoolHuman1234567890",
+  "kingword":"free",
+  "higher_kingword":"free",
   "altlimit": 5,
   "slowmode": 1000,
   "namelimit": 25,
@@ -13,7 +13,7 @@
     "litter.catbox.moe",
     "i.imgflip.com"
   ],
-  "version": "6.9.16 LEAKED BETA",
+  "version": "The Offical BonziWORLD Deluxe Version 2025",
   "room_defaults":{
     "public":true,
     "owner":null
