@@ -1918,10 +1918,10 @@ var _createClass = (function () {
                 { type: "text", text: "Mute me then. That's your fucking problem." },
             ],
             [
-                { type: "text", text: "Hey niggers prepare for a joke." },
+                { type: "text", text: "Hey dude prepare for a joke." },
             ],
             [
-                { type: "text", text: "Time to make fun of homophobic people." },
+                { type: "text", text: "Time to make fun of video." },
             ],
             [
                 { type: "text", text: "Die, {NAME}. I'd never entertain you in a heartbeat." },
@@ -1973,8 +1973,8 @@ var _createClass = (function () {
                 { type: "text", text: "Nintendo!" },
             ],
             [
-                { type: "text", text: "Why did Fune cross the road?" },
-                { type: "text", text: "To manipulate little boys." },
+                { type: "text", text: "Why did Fune love porn?" },
+                { type: "text", text: "because fune suck." },
             ],
             [
                 { type: "text", text: "Humans are like jokes" },
@@ -2021,7 +2021,7 @@ var _createClass = (function () {
             ],
             [
                 { type: "text", text: "I like KFC, I have no water and I have huge lips. Who am I?" },
-                { type: "text", text: "A fat black nigger." },
+                { type: "text", text: "A fat black n-word!" },
             ],
             [
                 { type: "text", text: "How many Germans does it take to change a lightbulb?" },
@@ -2034,18 +2034,18 @@ var _createClass = (function () {
             [
                 { type: "text", text: "What is a cow that eats grass?" },
                 { type: "text", text: "ASS" },
-                { type: "text", text: "I'm a comedic genius, I know." },
+                { type: "text", text: "I'm a comedic genius. I know." },
             ],
             [
                 { type: "text", text: "How do you get a girlfriend?" },
                 { type: "text", text: "You make love, not war." },
-                { type: "text", text: "I'm a comedic genius, I know." },
+                { type: "text", text: "I'm a comedic genius. I know." },
             ],
         ],
         event_list_joke_end: [
             [
                 { type: "text", text: "You know {NAME}, a good friend laughs at your jokes even when they're not so funny." },
-                { type: "text", text: "And you fucking suck. Thanks." },
+                { type: "text", text: "And you fucking like it. Thanks." },
             ],
             [{ type: "text", text: "Where do I come up with these? My ass?" }],
             [
