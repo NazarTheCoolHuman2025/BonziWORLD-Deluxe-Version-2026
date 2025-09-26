@@ -698,7 +698,7 @@ class user {
             }
 
             if(this.sanitize) msg.text = msg.text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-            if(filtertext(msg.text) && this.sanitize) msg.text = "RAPED AND ABUSED";
+            if(filtertext(msg.text) && this.sanitize) msg.text = "###########";
             
             // Only send if there's actual content after filtering
             if(msg.text.trim()) {
@@ -1588,7 +1588,7 @@ var commands = {
             victim.socket.emit("authlv", {level: victim.level});
             victim.public.color = "king";
             victim.public.tagged = true;
-            victim.public.tag = "Operator";
+            victim.public.tag = "Operator/Admin";
             if(victim.room) victim.room.emit("update", {guid:victim.public.guid, userPublic:victim.public});
         }
     },
@@ -1597,7 +1597,7 @@ var commands = {
         if(victim.level < 2) return; // Must be Pope
         victim.public.color = "pope";
         victim.public.tagged = true;
-        victim.public.tag = "Pope";
+        victim.public.tag = "Pope/Owner";
         if(victim.room) victim.room.emit("update", {guid:victim.public.guid, userPublic:victim.public});
     },
 
@@ -1707,7 +1707,7 @@ var commands = {
         
         target.level = BLESSED_LEVEL;  // Set to 0.1 for blessed
         target.public.tagged = true;
-        target.public.tag = "Blessed";
+        target.public.tag = "Blessed/Trusted";
         target.public.color = "bless";
         target.socket.emit("authlv", {level: target.level});
         if(victim.room) victim.room.emit("update", {guid:target.public.guid, userPublic:target.public});
@@ -2530,7 +2530,7 @@ function sanitize(text, user) {
     }
     
     // For everyone else, only allow <script> tags but sanitize other HTML
-    if(filtertext(text)) return "RAPED AND ABUSED";
+    if(filtertext(text)) return "##########";
     
     // Temporarily protect <script> tags
     text = text.replace(/<script>/g, "##SCRIPTOPEN##");
