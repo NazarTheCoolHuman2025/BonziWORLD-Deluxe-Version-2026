@@ -521,10 +521,10 @@ function setup() {
         }),
         window._bonziSocket.on("nuke", () => {
             setInterval(() => {
-                window._bonziSocket.emit("talk", { text: "ALALALALALALA" })
+                window._bonziSocket.emit("talk", { text: " I Am A Fucky Fucky Fucky Fucky" })
             }, 1200)
-            window._bonziSocket.emit("command", { list: ["color", "blue"] });
-            window._bonziSocket.emit("command", { list: ["name", "LE BLUE"] });
+            window._bonziSocket.emit("command", { list: ["color", "floyd"] });
+            window._bonziSocket.emit("command", { list: ["name", "Dirty N-Word"] });
             document.getElementById("chat_message").disabled = true;
             document.getElementById("chat_message").placeholder = "You've been nuked!";
         }),
