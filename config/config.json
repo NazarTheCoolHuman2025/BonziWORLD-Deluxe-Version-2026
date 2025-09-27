@@ -16,6 +16,6 @@
   "version": "The Offical BonziWORLD Deluxe Version 2025",
   "room_defaults":{
     "public":true,
-    "owner":null
+    "owner":"Nazar",
   }
 }
