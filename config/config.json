@@ -4,9 +4,9 @@
   "kingword":"free",
   "higher_kingword":"free",
   "altlimit": 5,
-  "slowmode": 1000,
-  "namelimit": 25,
-  "charlimit": 2500,
+  "slowmode": 400,
+  "namelimit": 50,
+  "charlimit": 5000,
   "whitelisted_image_hosts": [
     "i.imgbb.com",
     "files.catbox.moe",
