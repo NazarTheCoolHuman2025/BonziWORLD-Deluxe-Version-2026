@@ -132,7 +132,7 @@ const BonziSprites = {
     
     // Standard colors only - privileged colors (pope, king, blessed, etc.) are handled separately
     colors: [
-        "purple", "blue", "red", "green", "pink", 
+        "purple", "cyzn", "blue", "red", "green", "pink", 
         "black", "brown", "dress", "floyd", "jew", 
         "orange", "allah", "troll", "yellow", "white", 
         "seamus", "ronnie", "satoko", "voidmeme", "trump",
