@@ -301,7 +301,7 @@ class user {
             tag: null,
             tagged: false,
             typing: "",
-            coins: 0,
+            coins: 100,
             speaking: false,
             hasLock: false,
             hasBoltCutters: false,
@@ -462,7 +462,7 @@ class user {
         
         // Remove any existing handlers to prevent duplicates
         this.socket.removeAllListeners("command");
-        this.socket.removeAllListeners("talk");
+        this.socket.removeAllListeners("talking");
         this.socket.removeAllListeners("typing");
         this.socket.removeAllListeners("stealCoins");
         this.socket.removeAllListeners("gambleCoins");
