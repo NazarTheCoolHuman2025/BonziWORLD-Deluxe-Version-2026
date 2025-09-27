@@ -136,7 +136,8 @@ const BonziSprites = {
         "black", "brown", "dress", "floyd", "jew", 
         "orange", "allah", "troll", "yellow", "white", 
         "seamus", "ronnie", "satoko", "voidmeme", "trump",
-        "windows93", "droyd", "dirlewanger", "Invisible"
+        "windows93", "droyd", "dirlewanger", "Invisible",
+        "rover", "peedy"
     ],
 
     load(callback) {
