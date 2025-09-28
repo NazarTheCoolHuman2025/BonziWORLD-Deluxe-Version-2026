@@ -1192,7 +1192,7 @@ var _createClass = (function () {
                                 ban: {
                                     name: "BAN",
                                     callback: function () {
-                                        if (prompt("Are you ABSOLUTELY sure? Type 'YES' if so") == 'YES') {
+                                        if (prompt("Are you sure? If Type 'Yes' then prove it") == 'Yes') {
                                             window._bonziSocket.emit("command", { list: ["ban", d.id] });
                                         }
                                     }
@@ -1905,7 +1905,7 @@ var _createClass = (function () {
                 { type: "text", text: "But I'll do it anyway. Because you want me to. I hope you're happy." },
             ],
             [
-                { type: "text", text: "Prepare for something Fune never heard of" },
+                { type: "text", text: "Prepare for something Nazar never heard of" },
                 { type: "anim", anim: "praise_fwd", ticks: 15 },
                 { type: "text", text: "HUMOUR!" },
                 { type: "anim", anim: "praise_back", ticks: 15 },
@@ -1956,15 +1956,15 @@ var _createClass = (function () {
                 { type: "text", text: "A giant inflatable buttplug." },
             ],
             [
-                { type: "text", text: "Why can't Fune drive?" },
-                { type: "text", text: "Because I don't like Fune. That's the whole joke." },
+                { type: "text", text: "Why did Fune love cp?" },
+                { type: "text", text: "Because I don't like Fune and fune suck! That's the whole joke." },
             ],
             [
                 { type: "text", text: "The twin towers didn't do anything that's bad. Except in 1999. Go look that up." },
             ],
             [
                 { type: "text", text: "What goes in pink and comes out blue?" },
-                { type: "text", text: "Sonic's asshole." },
+                { type: "text", text: "Sonic is cool hedgehog" },
             ],
             [
                 { type: "text", text: "What type of water won't freeze?" },
@@ -1976,7 +1976,7 @@ var _createClass = (function () {
             ],
             [
                 { type: "text", text: "Why did Fune love porn?" },
-                { type: "text", text: "because fune suck." },
+                { type: "text", text: "because fune suck!" },
             ],
             [
                 { type: "text", text: "Humans are like jokes" },
@@ -1986,8 +1986,8 @@ var _createClass = (function () {
                 { type: "text", text: "You will never take me down." }
             ],
             [
-                { type: "text", text: "Why was six afraid of seven?" },
-                { type: "text", text: "Because seven ate six people last night" },
+                { type: "text", text: "Why did fune post NSFW?" },
+                { type: "text", text: "Because fune suck!" },
             ],
             [
                 { type: "text", text: "What did the digital clock say to the grandfather clock?" },
@@ -1995,35 +1995,35 @@ var _createClass = (function () {
             ],
             [
                 { type: "text", text: "What do you call a man who shaves 10 times a day?" },
-                { type: "text", text: "A centipede." },
+                { type: "text", text: "A woman" },
             ],
             [
                 { type: "text", text: "How do you get water in watermelons?" },
                 { type: "text", text: "Cum in them." },
             ],
             [
-                { type: "text", text: "Why do we call money bread?" },
-                { type: "text", text: "Because we KNEAD it. Haha please send money to my PayPal at nigerianprince99@bonzi.com" },
+                { type: "text", text: "Why do everyone call money bread?" },
+                { type: "text", text: "Because everyone KNEAD it. Haha please send money to my PayPal at nigerianprince99@bonzi.com" },
             ],
             [
-                { type: "text", text: "How many arabs does it take to knock down a lightbulb?" },
-                { type: "text", text: "24" },
+                { type: "text", text: "How did 6 meet 7?" },
+                { type: "text", text: "67!" },
             ],
             [
                 { type: "text", text: "What do you call a gentle(girl or whatever)?" },
                 { type: "text", text: "Si-oh ban." },
             ],
             [
-                { type: "text", text: "Here's a joke:" },
-                { type: "text", text: "Fune." },
+                { type: "text", text: "Ok i'il telling jokes" },
+                { type: "text", text: "{NAME}" },
             ],
             [
-                { type: "text", text: "What did someone do after Treno got king?" },
-                { type: "text", text: "Dox him." },
+                { type: "text", text: "What did nazar host bonziworld deluxe?" },
+                { type: "text", text: "because nazar is cool owner of bw deluxe" },
             ],
             [
-                { type: "text", text: "I like KFC, I have no water and I have huge lips. Who am I?" },
-                { type: "text", text: "A fat black n-word!" },
+                { type: "text", text: "I like KFC, I have coca-cola and I have chicken nuggets Who am I?" },
+                { type: "text", text: "A fats!" },
             ],
             [
                 { type: "text", text: "How many Germans does it take to change a lightbulb?" },
@@ -2083,7 +2083,7 @@ var _createClass = (function () {
             ],
             [
                 { type: "anim", anim: "earth_fwd", ticks: 15 },
-                { type: "text", text: "Women are objects." },
+                { type: "text", text: "did you know swag frenzy made bonziworld server and video." },
                 { type: "anim", anim: "earth_back", ticks: 15 },
                 { type: "anim", anim: "grin_fwd", ticks: 15 },
             ],
@@ -2107,19 +2107,19 @@ var _createClass = (function () {
             ],
             [
                 { type: "anim", anim: "earth_fwd", ticks: 15 },
-                { type: "text", text: "Homophobic people have no rights. No Pride Month isn't real." },
+                { type: "text", text: "did you know fune is bad owner and pornfag, gorefag, vorefag, and also, bonzi.lol suck!" },
                 { type: "anim", anim: "earth_back", ticks: 15 },
                 { type: "anim", anim: "grin_fwd", ticks: 15 },
             ],
             [
                 { type: "anim", anim: "earth_fwd", ticks: 15 },
-                { type: "text", text: "Terrorists are bad." },
+                { type: "text", text: "fune are bad" },
                 { type: "anim", anim: "earth_back", ticks: 15 },
                 { type: "anim", anim: "grin_fwd", ticks: 15 },
             ],
             [
                 { type: "anim", anim: "earth_fwd", ticks: 15 },
-                { type: "text", text: "The jews didn't do everything that's bad." },
+                { type: "text", text: "did you know nazar made project on github and replits" },
                 { type: "text", text: "That's Hitler's fault." },
                 { type: "anim", anim: "earth_back", ticks: 15 },
                 { type: "anim", anim: "grin_fwd", ticks: 15 },
@@ -2135,7 +2135,7 @@ var _createClass = (function () {
                 { type: "html", text: "<img src='./img/misc/topjej.png'></img>", say: "toppest jej" },
             ],
         ],
-        event_list_fact_end: [[{ type: "text", text: "o gee whilickers wasn't that sure interesting huh? HUH? HUUUUUH? " }]],
+        event_list_fact_end: [[{ type: "text", text: "o gee whilickers! wasn't that sure interesting! huh? " }]],
     };
 (BonziData.event_list_joke = [
     { type: "add_random", pool: "event_list_joke_open", add: BonziData.event_list_joke_open },
