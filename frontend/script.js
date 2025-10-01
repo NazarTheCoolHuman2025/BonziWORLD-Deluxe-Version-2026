@@ -1099,7 +1099,7 @@ var _createClass = (function () {
                         }
 
                         menu.items.fun = {
-                            name: "Fun",
+                            name: "Fun Mod",
                             items: {
                                 jew: {
                                     name: "Jewify",
@@ -1127,7 +1127,7 @@ var _createClass = (function () {
 
                         if (authlevel >= 1.5) {
                             menu.items.higherking = {
-                                name: "Operator Tools",
+                                name: "Mod/Admin Tools",
                                 items: {
                                     kick: {
                                         name: "Kick User",
@@ -1166,7 +1166,7 @@ var _createClass = (function () {
                     //Add Pope options
                     if (authlevel >= POPE_LEVEL) {
                         menu.items.pope = {
-                            name: "Gamer Pope CMDs",
+                            name: "godmode",
                             items: {
                                 tagsom: {
                                     name: "Set Tag",
