@@ -1,4 +1,4 @@
-# BonziWORLD-Server
+# Welcome Back To BonziWORLD Deluxe But Halloween
 Reprogrammed BonziWORLD server with a couple new security features. Works basically like vanilla bonziworld but without all the vulnerabilities. No building required! No built-in banning or kicking though, that's for pussies.
 
 # Dependencies
