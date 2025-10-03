@@ -9,11 +9,16 @@ Run the command "npm install socket.io" in the same folder as index.js. Then run
 
 # Credits/Friends
 **Swag FRENZY** (he made bonziworld projects)
+
 Izhank216 (i guess lol, i gave him credits)
+
 Luca, MTV Dance, Anon 3.5 (BBV ALT)
+
 Joseph Judge (he made original bonziworld servers)
+
 Rover The Cool Dog (he made rdok and room id shop)
 
 # Special
 Anti-FUNE
+
 BonziWORLD
