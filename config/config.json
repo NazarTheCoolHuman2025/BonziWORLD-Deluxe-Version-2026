@@ -1,8 +1,8 @@
 {
   "port":80,
   "godword":"NazarTheCoolHuman1234567890",
-  "kingword":"free",
-  "higher_kingword":"free",
+  "kingword":"higherkingSecrets",
+  "higher_kingword":"kingSecrets",
   "altlimit": 5,
   "slowmode": 400,
   "namelimit": 50,
