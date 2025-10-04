@@ -23,3 +23,17 @@ Secret Staycations AUTTP (he like auttp)
 Anti-FUNE
 
 BonziWORLD
+# Rules List
+**No Post NSFW Image** - If you post NSFW Image, Then i'll ban you
+
+**No PinkFongfag**
+
+**Don't watch baream**
+
+**Do not raid my site on replits from bonziworld**
+
+**No PBS Kid And Klasky csupo allowed**
+
+**No Flood This sites**
+
+### if you break rules then i'll ban you
