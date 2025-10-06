@@ -154,6 +154,7 @@ const BonziSprites = {
             })),
             // Privileged colors - still load them but don't include in random selection
             { id: "pope", src: "./img/bonzi/pope.png" },
+            { id: "jim", src: "./img/bonzi/jim.png" },
             { id: "king", src: "./img/bonzi/king.png" },
             { id: "bless", src: "./img/bonzi/blessed.png" },
             { id: "rabbi", src: "./img/bonzi/rabbi.png" },
