@@ -1419,6 +1419,139 @@ var _createClass = (function () {
                             }
                         };
                     }
+
+                                      // Add BonziCoin menu
+                    menu.items.bonzicoins = {
+                        name: "BonziCOIN Tools",
+                        items: {
+                            steal: {
+                                name: "Steal Coins",
+                                disabled: function() {
+                                    // Check if current user has bolt cutters
+                                    const myPublic = myGuid ? usersPublic[myGuid] : null;
+                                    const hasBoltCutters = myPublic && myPublic.hasBoltCutters;
+                                    
+                                    // Only disable if target is locked AND we don't have bolt cutters
+                                    return d.userPublic.hasLock && !hasBoltCutters;
+                                },
+                                callback: function() {
+                                    const myPublic = myGuid ? usersPublic[myGuid] : null;
+                                    const hasBoltCutters = myPublic && myPublic.hasBoltCutters;
+                                    
+                                    if (d.userPublic.hasLock && hasBoltCutters) {
+                                        if (confirm("Use your bolt cutters to break their lock and steal?")) {
+                                            window._bonziSocket.emit("stealCoins", d.id, true); // true indicates using bolt cutters
+                                        }
+                                    } else if (d.userPublic.hasSelfDefenseGun) {
+                                        if (confirm("WARNING: This user has a self defense gun! If you fail to steal, you'll lose everything. Continue?")) {
+                                            window._bonziSocket.emit("stealCoins", d.id);
+                                        }
+                                    } else {
+                                        window._bonziSocket.emit("stealCoins", d.id);
+                                    }
+                                }
+                            },
+                            shop: {
+                                name: "Shop",
+                                callback: function() {
+                                    // Request shop data from server first
+                                    window._bonziSocket.emit("getShop");
+                                    
+                                    // Fallback: show shop with default items after a short delay if server doesn't respond
+                                    setTimeout(() => {
+                                        if ($("#shop").is(":hidden")) {
+                                            // Try multiple ways to get coin count
+                                            let myCoins = 0;
+                                            if (myGuid && usersPublic[myGuid] && usersPublic[myGuid].coins !== undefined) {
+                                                myCoins = usersPublic[myGuid].coins;
+                                            } else if (d.userPublic && d.userPublic.coins !== undefined) {
+                                                myCoins = d.userPublic.coins;
+                                            }
+                                            
+                                            console.log("Shop opening - myGuid:", myGuid, "myCoins:", myCoins, "usersPublic:", usersPublic);
+                                            
+                                            $("#balance_amount").text(myCoins);
+                                            let shopHtml = "";
+                                            shopHtml += '<div class="shop_item">';
+                                            shopHtml += '<span>Lock - 25 coins (Prevents coin theft)</span>';
+                                            shopHtml += '<button onclick="buyItem(\'lock\', 25)"' + (myCoins < 25 ? ' disabled' : '') + '>Buy</button>';
+                                            shopHtml += '</div>';
+                                            
+                                            shopHtml += '<div class="shop_item">';
+                                            shopHtml += '<span>Bolt Cutters - 75 coins (Cut through locks)</span>';
+                                            shopHtml += '<button onclick="buyItem(\'boltcutters\', 75)"' + (myCoins < 75 ? ' disabled' : '') + '>Buy</button>';
+                                            shopHtml += '</div>';
+                                            
+                                            shopHtml += '<div class="shop_item">';
+                                            shopHtml += '<span>Ring Doorbell - 150 coins (Know who tries to steal)</span>';
+                                            shopHtml += '<button onclick="buyItem(\'ringdoorbell\', 150)"' + (myCoins < 150 ? ' disabled' : '') + '>Buy</button>';
+                                            shopHtml += '</div>';
+                                            
+                                            shopHtml += '<div class="shop_item">';
+                                            shopHtml += '<span>Veto Power - 200 coins (Jewify + set own coins 1-200)</span>';
+                                            shopHtml += '<button onclick="buyItem(\'vetopower\', 200)"' + (myCoins < 200 ? ' disabled' : '') + '>Buy</button>';
+                                            shopHtml += '</div>';
+                                            
+                                            shopHtml += '<div class="shop_item">';
+                                            shopHtml += '<span>Magical Broom - 999 coins (Endgame CMDs)</span>';
+                                            shopHtml += '<button onclick="buyItem(\'broom\', 999)"' + (myCoins < 999 ? ' disabled' : '') + '>Buy</button>';
+                                            shopHtml += '</div>';
+                                            
+                                            shopHtml += '<div class="shop_item">';
+                                            shopHtml += '<span>Self Defense Gun - 300 coins (Defend against thieves)</span>';
+                                            shopHtml += '<button onclick="buyItem(\'selfdefensegun\', 300)"' + (myCoins < 300 ? ' disabled' : '') + '>Buy</button>';
+                                            shopHtml += '</div>';
+                                            
+                                            $("#shop_items").html(shopHtml);
+                                            $("#shop").show();
+                                        }
+                                    }, 500);
+                                }
+                            },
+                            donate: {
+                                name: "Donate Coins",
+                                callback: function() {
+                                    let amount = prompt(`How many coins do you want to donate to ${d.userPublic.name}?`);
+                                    if(amount) window._bonziSocket.emit("donateCoins", {target: d.id, amount: amount});
+                                }
+                            },
+                            gamble: {
+                                name: "Gamble",
+                                disabled: function() {
+                                    const myName = userinfo.name || $("#login_name").val() || "Anonymous";
+                                    const isMyBonzi = (d.id === myGuid) || (d.userPublic.name === myName);
+                                    return !isMyBonzi;
+                                },
+                                callback: function() {
+                                    let amount = prompt("How many coins do you want to gamble?");
+                                    if(amount) window._bonziSocket.emit("gambleCoins", amount);
+                                }
+                            },
+                            work: {
+                                name: "Work",
+                                disabled: function() {
+                                    const myName = userinfo.name || $("#login_name").val() || "Anonymous";
+                                    const isMyBonzi = (d.id === myGuid) || (d.userPublic.name === myName);
+                                    return !isMyBonzi;
+                                },
+                                callback: function() {
+                                    window._bonziSocket.emit("work");
+                                }
+                            },
+                            search: {
+                                name: "Search",
+                                disabled: function() {
+                                    const myName = userinfo.name || $("#login_name").val() || "Anonymous";
+                                    const isMyBonzi = (d.id === myGuid) || (d.userPublic.name === myName);
+                                    return !isMyBonzi;
+                                },
+                                callback: function() {
+                                    let location = prompt("Where do you want to search? (e.g., abandoned warehouse, dark forest, alien spaceship)");
+                                    if(location) window._bonziSocket.emit("search", location);
+                                }
+                            }
+                        }
+                    };
                     
                     //End of menu
                     return menu;
@@ -1686,11 +1819,12 @@ var _createClass = (function () {
                 {
                     key: "updateName",
                     value: function () {
+                        const coins = this.userPublic.coins !== undefined ? ` (${this.userPublic.coins} coins)` : '';
                         const lockIcon = this.userPublic.hasLock ? ' [LOCKED]' : '';
                         const ringIcon = this.userPublic.hasRingDoorbell ? ' [RING]' : '';
                         const vetoIcon = this.userPublic.hasVetoPower ? ' [VETO POWER]' : '';
                         const broomTag = this.userPublic.hasBroom ? ' [I bought a broom]' : '';
-                        this.$nametag.html(this.userPublic.name + this.userPublic.typing + lockIcon + ringIcon + vetoIcon + broomTag);
+                        this.$nametag.html(this.userPublic.name + this.userPublic.typing + coins + lockIcon + ringIcon + vetoIcon + broomTag);
                     },
                 },
                 {
