@@ -502,7 +502,7 @@ function setup() {
             } else {
                 //User shit will be moved here later
             }
-            $("#memcount").html("Member Count: " + a.count)
+            $("#usercount").html("User: " + a.count)
         }),
         window._bonziSocket.on("rawdata", a => {
             alert(a);
@@ -1036,7 +1036,7 @@ var _createClass = (function () {
                                         },
                                     },
                                     nigger: {
-                                        name: "Niggerify",
+                                        name: "Retardify",
                                         callback: function () {
                                             window._bonziSocket.emit("talk", { text: d.userPublic.name + " WANNA HEAR SOMETHING?" })
                                             setTimeout(() => {
@@ -2255,7 +2255,7 @@ var _createClass = (function () {
             [
                 { type: "anim", anim: "earth_fwd", ticks: 15 },
                 { type: "text", text: "did you know nazar made project on github and replits" },
-                { type: "text", text: "That's Hitler's fault." },
+                { type: "text", text: "i like bonziworld" },
                 { type: "anim", anim: "earth_back", ticks: 15 },
                 { type: "anim", anim: "grin_fwd", ticks: 15 },
             ],
