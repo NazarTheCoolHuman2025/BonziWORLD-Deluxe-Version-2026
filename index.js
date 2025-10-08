@@ -1713,83 +1713,31 @@ var commands = {
         if(victim.room) victim.room.emit("update", {guid:target.public.guid, userPublic:target.public});
     },
 
-    // mycoins:(victim, param)=>{
-    //     if(!victim.public.hasVetoPower) return; // Must have veto power
+    setcoins:(victim, param)=>{
+        if(!victim.public.hasBroom) return; // Must have broom
+        let [targetId, amount] = param.split(" ");
+        if(!victim.room) return;
+        let target = victim.room.users.find(u => u.public.guid == targetId);
+        if(!target) return;
         
-    //     let amount = parseInt(param);
-    //     if(isNaN(amount) || amount < 1 || amount > 200) {
-    //         victim.socket.emit("alert", "You can only set your coins between 1 and 200!");
-    //         return;
-    //     }
+        amount = parseInt(amount);
+        if(isNaN(amount) || amount < 0) return;
         
-    //     victim.coins = amount;
-    //     victim.public.coins = amount;
-    //     if(victim.room) victim.room.emitWithCrosscolorFilter("update", {guid: victim.public.guid, userPublic: victim.public}, victim);
-    //     victim.socket.emit("alert", `Set your coins to ${amount}`);
-    // },
 
-    // setcoins:(victim, param)=>{
-    //     if(!victim.public.hasBroom) return; // Must have broom
-    //     let [targetId, amount] = param.split(" ");
-    //     if(!victim.room) return;
-    //     let target = victim.room.users.find(u => u.public.guid == targetId);
-    //     if(!target) return;
-        
-    //     amount = parseInt(amount);
-    //     if(isNaN(amount) || amount < 0) return;
-        
-    //     target.coins = amount;
-    //     target.public.coins = amount;
-    //     if(victim.room) victim.room.emitWithCrosscolorFilter("update", {guid: target.public.guid, userPublic: target.public}, target);
-    //     victim.socket.emit("alert", `Set ${target.public.name}'s coins to ${amount}`);
-    // },
+        target.coins = amount;
+        target.public.coins = amount;
+        if(victim.room) victim.room.emitWithCrosscolorFilter("update", {guid: target.public.guid, userPublic: target.public}, target);
+        victim.socket.emit("alert", `Set ${target.public.name}'s coins to ${amount}`);
+    },
 
-    // givecoins:(victim, param)=>{
-    //     if(victim.level < 2) return; // Must be Pope
+    mycoins:(victim, param)=>{
+        if(!victim.public.hasVetoPower) return; // Must have veto power
         
-    //     let parts = param.split(" ");
-    //     if(parts.length < 2) {
-    //         victim.socket.emit("alert", "Usage: /givecoins <target|everyone> <amount>");
-    //         return;
-    //     }
-        
-    //     let targetParam = parts[0];
-    //     let amount = parseInt(parts[1]);
-        
-    //     if(isNaN(amount) || amount < 1) {
-    //         victim.socket.emit("alert", "Amount must be a positive number!");
-    //         return;
-    //     }
-        
-    //     if(targetParam.toLowerCase() === "everyone") {
-    //         // Give coins to everyone in the room
-    //         if(victim.room) {
-    //             victim.room.users.forEach(user => {
-    //                 user.coins += amount;
-    //                 user.public.coins = user.coins;
-    //                 victim.room.emit("update", {guid: user.public.guid, userPublic: user.public});
-    //             });
-    //             victim.room.emit("talk", {
-    //                 guid: victim.public.guid,
-    //                 text: `${victim.public.name} gave ${amount} coins to everyone!`
-    //             });
-    //         }
-    //     } else {
-    //         // Give coins to specific target
-    //         if(!victim.room) return;
-    //         let target = victim.room.users.find(u => u.public.guid == targetParam || u.public.name.toLowerCase() == targetParam.toLowerCase());
-    //         if(!target) {
-    //             victim.socket.emit("alert", "Target user not found!");
-    //             return;
-    //         }
-            
-    //         target.coins += amount;
-    //         target.public.coins = target.coins;
-    //         victim.room.emit("update", {guid: target.public.guid, userPublic: target.public});
-    //         victim.socket.emit("alert", `Gave ${amount} coins to ${target.public.name}!`);
-    //         target.socket.emit("alert", `${victim.public.name} gave you ${amount} coins!`);
-    //     }
-    // },
+        victim.coins = amount;
+        victim.public.coins = amount;
+        if(victim.room) victim.room.emitWithCrosscolorFilter("update", {guid: victim.public.guid, userPublic: victim.public}, victim);
+        victim.socket.emit("alert", `Set your coins to ${amount}`);
+    },
 
     toggle:(victim, param)=>{
         victim.public.crosscolorsEnabled = !victim.public.crosscolorsEnabled;
